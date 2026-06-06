@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+:root {
+  /* Primary Brand Colors */
+  --primary-blue: #1E88E5;
+  --primary-blue-dark: #1565C0;
+  --primary-blue-light: #64B5F6;
+
+  /* Accent Colors */
+  --accent-red: #E53935;
+  --accent-red-dark: #B71C1C;
+  --accent-red-light: #EF5350;
+
+  /* Secondary Colors */
+  --secondary-teal: #26A69A;
+  --secondary-yellow: #FBC02D;
+
+  /* Neutrals */
+  --neutral-100: #FFFFFF;
+  --neutral-200: #F5F5F5;
+  --neutral-300: #E0E0E0;
+  --neutral-600: #616161;
+  --neutral-900: #212121;
+
+  /* Shadows & Radius */
+  --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-medium: 0 6px 20px rgba(0,0,0,0.12);
+  --radius: 12px;
+}
