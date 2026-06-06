@@ -114,7 +114,7 @@ export default function Home() {
                 marginBottom: '0.75rem',
               }}
             >
-              Why <span style={{ color: 'var(--secondary-teal)' }}>AtlasSpot</span>?
+              Why <span><span style={{ color: 'var(--primary-blue-dark)' }}>Atlas</span><span style={{ color: 'var(--accent-red)' }}>Spot</span></span>?
             </h2>
             <p style={{ fontSize: '1.05rem', color: 'var(--neutral-600)' }}>
               Everything you need to plan the perfect trip

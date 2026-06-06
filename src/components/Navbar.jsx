@@ -54,7 +54,7 @@ export default function Navbar() {
               fontSize: '1.5rem',
               fontWeight: '700',
               fontFamily: 'var(--font-family-heading)',
-              color: 'var(--primary-blue)',
+              color: 'var(--primary-blue-dark)',
             }}
           >
             Atlas<span style={{ color: 'var(--accent-red)' }}>Spot</span>
