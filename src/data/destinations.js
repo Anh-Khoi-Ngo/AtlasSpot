@@ -256,7 +256,7 @@ export const popularDestinations = [
     name: 'Machu Picchu',
     country: 'Peru',
     countrycode: 'PE',
-    image: 'https://images.unsplash.com/photo-1587595431973-160d0d163f60?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&q=80',
     description: 'The legendary Incan citadel set high in the Andes Mountains, a wonder of the ancient world.',
     rating: 4.9,
     region: 'South America',
