@@ -64,6 +64,41 @@ export default function SearchBar({ onSearch, placeholder = 'Search destinations
             backgroundColor: 'transparent',
           }}
         />
+        {query.length > 0 && (
+          <button
+            type="button"
+            onClick={() => setQuery('')}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '32px',
+              height: '32px',
+              borderRadius: '50%',
+              border: 'none',
+              backgroundColor: 'var(--neutral-300)',
+              color: 'var(--neutral-600)',
+              cursor: 'pointer',
+              marginRight: '0.5rem',
+              flexShrink: 0,
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--accent-red)';
+              e.currentTarget.style.color = 'white';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--neutral-300)';
+              e.currentTarget.style.color = 'var(--neutral-600)';
+            }}
+            aria-label="Clear search"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        )}
       </div>
       <button
         type="submit"

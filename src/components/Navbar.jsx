@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Show, SignInButton, UserButton } from '@clerk/react';
+import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -96,6 +96,31 @@ export default function Navbar() {
             <SignInButton mode="modal">
               <button
                 style={{
+                  backgroundColor: 'transparent',
+                  color: 'var(--primary-blue-dark)',
+                  padding: '0.5rem 1.25rem',
+                  borderRadius: 'var(--radius)',
+                  fontWeight: '600',
+                  border: '2px solid var(--primary-blue-dark)',
+                  cursor: 'pointer',
+                  fontSize: '0.875rem',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = 'var(--primary-blue-dark)';
+                  e.target.style.color = 'white';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = 'var(--primary-blue-dark)';
+                }}
+              >
+                Sign In
+              </button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <button
+                style={{
                   backgroundColor: 'var(--primary-blue)',
                   color: 'white',
                   padding: '0.5rem 1.25rem',
@@ -109,9 +134,9 @@ export default function Navbar() {
                 onMouseEnter={(e) => (e.target.style.backgroundColor = 'var(--primary-blue-dark)')}
                 onMouseLeave={(e) => (e.target.style.backgroundColor = 'var(--primary-blue)')}
               >
-                Sign In
+                Sign Up
               </button>
-            </SignInButton>
+            </SignUpButton>
           </Show>
           <Show when="signed-in">
             <UserButton

@@ -118,23 +118,66 @@ export default function DestinationsList() {
             >
               Search
             </label>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={handleSearch}
-              placeholder="Search destinations..."
-              style={{
-                width: '100%',
-                padding: '0.6rem 0.75rem',
-                border: '1px solid var(--neutral-300)',
-                borderRadius: 'var(--radius)',
-                fontSize: '0.9rem',
-                outline: 'none',
-                fontFamily: 'var(--font-family-body)',
-              }}
-              onFocus={(e) => (e.target.style.borderColor = 'var(--primary-blue)')}
-              onBlur={(e) => (e.target.style.borderColor = 'var(--neutral-300)')}
-            />
+            <div style={{ position: 'relative' }}>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={handleSearch}
+                placeholder="Search destinations..."
+                style={{
+                  width: '100%',
+                  padding: '0.6rem 2.25rem 0.6rem 0.75rem',
+                  border: '1px solid var(--neutral-300)',
+                  borderRadius: 'var(--radius)',
+                  fontSize: '0.9rem',
+                  outline: 'none',
+                  fontFamily: 'var(--font-family-body)',
+                }}
+                onFocus={(e) => (e.target.style.borderColor = 'var(--primary-blue)')}
+                onBlur={(e) => (e.target.style.borderColor = 'var(--neutral-300)')}
+              />
+              {searchQuery.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearchQuery('');
+                    setSearchParams({});
+                  }}
+                  style={{
+                    position: 'absolute',
+                    right: '8px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '22px',
+                    height: '22px',
+                    borderRadius: '50%',
+                    border: 'none',
+                    backgroundColor: 'var(--neutral-300)',
+                    color: 'var(--neutral-600)',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    padding: 0,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--accent-red)';
+                    e.currentTarget.style.color = 'white';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--neutral-300)';
+                    e.currentTarget.style.color = 'var(--neutral-600)';
+                  }}
+                  aria-label="Clear search"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Region Filter */}
