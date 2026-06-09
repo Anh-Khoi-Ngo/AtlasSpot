@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react';
 import { popularDestinations } from '../data/destinations';
 import { getCountryByName } from '../api/countries';
 import { useFavorites } from '../context/useFavorites';
+import { SignInButton, useAuth } from '@clerk/react';
 
 export default function DestinationDetail() {
   const { id } = useParams();
   const { isFavorite, toggleFavorite } = useFavorites();
+  const { isSignedIn } = useAuth();
   const destination = popularDestinations.find((d) => d.id === id);
   const [countryData, setCountryData] = useState(null);
   const [loadingApi, setLoadingApi] = useState(() => !!destination);
@@ -173,36 +175,70 @@ export default function DestinationDetail() {
               </div>
             </div>
 
-            <button
-              onClick={() => toggleFavorite(destination.id)}
-              style={{
-                backgroundColor: liked ? 'var(--accent-red)' : 'rgba(255,255,255,0.2)',
-                color: 'white',
-                padding: '0.7rem 1.5rem',
-                borderRadius: 'var(--radius)',
-                border: 'none',
-                fontWeight: '600',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                fontSize: '0.95rem',
-                transition: 'all 0.2s ease',
-                backdropFilter: 'blur(4px)',
-              }}
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill={liked ? 'white' : 'none'}
-                stroke={liked ? 'white' : 'currentColor'}
-                strokeWidth="2"
+            {isSignedIn ? (
+              <button
+                onClick={() => toggleFavorite(destination.id)}
+                style={{
+                  backgroundColor: liked ? 'var(--accent-red)' : 'rgba(255,255,255,0.2)',
+                  color: 'white',
+                  padding: '0.7rem 1.5rem',
+                  borderRadius: 'var(--radius)',
+                  border: 'none',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontSize: '0.95rem',
+                  transition: 'all 0.2s ease',
+                  backdropFilter: 'blur(4px)',
+                }}
               >
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
-              {liked ? 'Saved' : 'Save'}
-            </button>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill={liked ? 'white' : 'none'}
+                  stroke={liked ? 'white' : 'currentColor'}
+                  strokeWidth="2"
+                >
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                {liked ? 'Saved' : 'Save'}
+              </button>
+            ) : (
+              <SignInButton mode="modal">
+                <button
+                  style={{
+                    backgroundColor: 'rgba(255,255,255,0.2)',
+                    color: 'white',
+                    padding: '0.7rem 1.5rem',
+                    borderRadius: 'var(--radius)',
+                    border: 'none',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontSize: '0.95rem',
+                    transition: 'all 0.2s ease',
+                    backdropFilter: 'blur(4px)',
+                  }}
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                  </svg>
+                  Sign in to Save
+                </button>
+              </SignInButton>
+            )}
           </div>
         </div>
       </div>
