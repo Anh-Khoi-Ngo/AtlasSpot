@@ -40,6 +40,7 @@ function ArticleDetail({ article }) {
               fontSize: '0.75rem',
               fontWeight: '600',
               marginBottom: '0.75rem',
+              marginLeft: '12px',
             }}
           >
             {article.category}
