@@ -197,7 +197,8 @@ export default function DestinationsList() {
               {regions.map((region) => (
                 <button
                   key={region}
-                  onClick={() => setSelectedRegion(region)}
+                  type="button"
+                  onClick={() => { setSelectedRegion(region); window.scrollTo(0, 0); }}
                   style={{
                     padding: '0.35rem 0.75rem',
                     borderRadius: '50px',
@@ -233,7 +234,8 @@ export default function DestinationsList() {
               {budgetLevels.map((level) => (
                 <button
                   key={level}
-                  onClick={() => setSelectedBudget(level)}
+                  type="button"
+                  onClick={() => { setSelectedBudget(level); window.scrollTo(0, 0); }}
                   style={{
                     padding: '0.4rem 0.75rem',
                     borderRadius: 'var(--radius)',
@@ -268,7 +270,7 @@ export default function DestinationsList() {
             </label>
             <select
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
+              onChange={(e) => { setSortBy(e.target.value); window.scrollTo(0, 0); }}
               style={{
                 width: '100%',
                 padding: '0.6rem 0.75rem',
