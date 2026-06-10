@@ -10,6 +10,7 @@ import TravelBlog from './pages/TravelBlog';
 import Favorites from './pages/Favorites';
 import './App.css';
 import { useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -46,6 +47,7 @@ function App() {
     <FavoritesProvider>
       <Router>
         <AppContent />
+        <Analytics />
       </Router>
     </FavoritesProvider>
   );
