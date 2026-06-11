@@ -4,7 +4,7 @@ A modern React travel‑inspiration app for exploring destinations, browsing cou
 <br><br>
 
 <img width="1608" height="854" alt="image" src="https://github.com/user-attachments/assets/d0b3e91b-72dc-4c08-ad4b-980690cd6b4b" />
-<br><br><br><br>
+<br><br>
 
 **🚀 Features**<br>
 -Browse countries and destinations
