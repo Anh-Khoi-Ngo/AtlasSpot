@@ -1,23 +1,22 @@
 **🌍 AtlasSpot**
 <br>
 A modern React travel‑inspiration app for exploring destinations, browsing countries, and discovering places around the world. Built with **React + Vite, REST Countries API,** and a clean global color theme inspired by the AtlasSpot logo.
-<br>
-**1. Home Page**
-<br>
+<br><br>
+
 <img width="1608" height="854" alt="image" src="https://github.com/user-attachments/assets/d0b3e91b-72dc-4c08-ad4b-980690cd6b4b" />
 <br><br><br><br>
-<img width="1642" height="870" alt="image" src="https://github.com/user-attachments/assets/d8e5d285-f85d-400f-87ae-9971f9313df7" />
-<br><br><br><br>
-<img width="1698" height="782" alt="image" src="https://github.com/user-attachments/assets/99b5b255-a8ca-4a43-b05f-7bee40acf307" />
-<br><br><br><br>
-<img width="1610" height="877" alt="image" src="https://github.com/user-attachments/assets/39f3e3da-1324-4316-970b-98a45ad2a2c4" />
-<br><br><br><br>
-
 **2. DestinationsList Page**
-<br>
-<img width="1658" height="873" alt="image" src="https://github.com/user-attachments/assets/ae2c58e7-2f66-4d9c-9178-990babe65ced" />
+<br><br>
+<img width="1685" height="858" alt="image" src="https://github.com/user-attachments/assets/e0ffc580-a774-45e0-832a-db82c28fb0d8" />
 <br><br><br><br>
 
 **3. DestinationsDetails Page**
-<br>
-<img width="1796" height="855" alt="image" src="https://github.com/user-attachments/assets/f5b0c3c0-75f8-4a2f-a42b-c97dd041c7b6" />
+<br><br>
+<img width="1875" height="853" alt="image" src="https://github.com/user-attachments/assets/af075297-95e8-4c93-9eae-43447e5f1aba" />
+<br><br><br><br>
+
+**4. TravelTips Page**
+<br><br>
+<img width="1735" height="861" alt="image" src="https://github.com/user-attachments/assets/843f222d-ac80-4d03-b234-4b1c6d39e28a" />
+<br><br><br><br>
+
